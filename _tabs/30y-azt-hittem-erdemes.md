@@ -7,6 +7,7 @@ youtube: https://youtu.be/gV4j105Cztw
 chords: Am Em Dm Am / F Am Dm C E7 , Am E7
 # capo
 # genre
+render_with_liquid: false
 ---
 
           30Y: Azt hittem, érdemes
