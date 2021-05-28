@@ -9,7 +9,8 @@ title: Home
   <h2>{{ tab.name }} - {{ tab.position }}</h2>
 
   {%- capture rawContent -%}
-    {% tab.content %}  
+    {%- tab.content -%}  
+
   {%- endcapture -%}
   <pre>{{- rawContent -}}</pre>
 
