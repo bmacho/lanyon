@@ -8,6 +8,9 @@ title: Home
 {% for tab in site.tabs %}
   <h2>{{ tab.name }} - {{ tab.position }}</h2>
 
-  <pre>{{ tab.content }}</pre>
+  {%- capture rawContent -%}
+    {% tab.content %}  
+  {%- endcapture -%}
+  <pre>{{- rawContent -}}</pre>
 
 {% endfor %}
