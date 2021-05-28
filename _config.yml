@@ -13,4 +13,4 @@ exclude: [Gemfile, Gemfile.lock, gems, node_modules, vendor, LICENSE.md, README.
 collections:
   tabs: 
     output: true
-    permalink: /:collection/:path/
+    permalink: /tabs/:name

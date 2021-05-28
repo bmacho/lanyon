@@ -3,15 +3,34 @@ layout: default
 title: Home
 ---
 
-<div> HEY! </div>
+{% assign tabs_ordered_by_artist = site.tabs | sort: "aritst" %}
 
-{% for tab in site.tabs %}
-  <h2>{{ tab.name }} - {{ tab.position }}</h2>
+<h2>Artists:</h2>
 
-  {%- capture rawContent -%}
-    {{ tab.content }}  
-  {%- endcapture -%}
+<ul>
+{% assign artist_of_prev_tab = '' %} 
 
-  <pre>{{- rawContent -}}</pre>
+{% for tab in tabs_ordered_by_artist %}
+	
+	{% if tab.artist != artist_of_prev_tab %}
 
+	<li>{{ tab.artist }}</li>
+	{% endif %}
+
+	{% assign artist_of_prev_tab = tab.artist %} 
+{% endfor %}
+</ul> 
+
+{% assign artist_of_prev_tab = '' %} 
+
+{% for tab in tabs_ordered_by_artist %}
+	
+	{% if tab.artist != artist_of_prev_tab %}
+		<h2>{{ tab.artist }}</h2>
+	{% endif %}
+
+	<br>
+	<a href="tabs/{{ tab.path | split: "/" | slice: 1, 100 }}">{{ tab.title }} - {{ tab.chords }}</a>
+	
+	{% assign artist_of_prev_tab = tab.artist %} 
 {% endfor %}
