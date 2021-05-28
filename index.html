@@ -3,11 +3,11 @@ layout: default
 title: Home
 ---
 
-<div> HEY! </div>
+<div> HO! </div>
 
 {% for tab in site.tabs %}
   <h2>{{ tab.name }} - {{ tab.position }}</h2>
 
-  <pre>{{ tab.content | strip_html}}</pre>
+  <pre>{{ tab.content }}</pre>
 
 {% endfor %}
