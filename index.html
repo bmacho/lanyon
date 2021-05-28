@@ -3,6 +3,11 @@ layout: default
 title: Home
 ---
 
+{% for tab in site.tabs %}
+  <h2>{{ tab.name }} - {{ tab.position }}</h2>
+  <pre>{{ tab.content }}</pre>
+{% endfor %}
+
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
