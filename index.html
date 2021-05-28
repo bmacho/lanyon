@@ -9,13 +9,7 @@ title: Home
   <h2>{{ tab.name }} - {{ tab.position }}</h2>
 
   {%- capture rawContent -%}
-    {{ tab.content }}
-  {%- endcapture -%}
-  <pre>{{- rawContent -}}</pre>
-
-
-  {%- capture rawContent -%}
-    {% include_relative _tabs/30y-azt-hittem-erdemes.md %}  
+    {{ tab.excerpt }}
   {%- endcapture -%}
   <pre>{{- rawContent -}}</pre>
 
