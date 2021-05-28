@@ -1,0 +1,11 @@
+## run with the command 'bash run'
+
+# killing things that use the port 4000
+
+ps aux | grep jekyll | head -n1 | tr -s ' ' | cut -d' ' -f2 | xargs kill
+
+nohup bundle exec jekyll serve > /dev/null 2>&1 &
+
+sleep 1
+
+nohup firefox http://localhost:4000 > /dev/null 2>&1 &
