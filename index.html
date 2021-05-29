@@ -5,42 +5,12 @@ title: Home
 
 {{ site.time | date_to_rfc822 }} <br> <br>
 
-<ul>
-{% for tab in site.pages %}
 
-	<li>{{ tab.title }} - {{ tab.chords }}</li>
 
-{% endfor %}
-</ul> 
+{% for collection in site.tabs %}
 
-{% assign tabs_ordered_by_artist = site.pages | sort: "aritst" %}
+    {{ collection }}
+    {{ collection.name }}
+    {{ collection.title }}
 
-<h2>Artists:</h2>
-
-<ul>
-{% assign artist_of_prev_tab = '' %} 
-
-{% for tab in tabs_ordered_by_artist %}
-	
-	{% if tab.artist != artist_of_prev_tab %}
-
-	<li>{{ tab.artist }}</li>
-	{% endif %}
-
-	{% assign artist_of_prev_tab = tab.artist %} 
-{% endfor %}
-</ul> 
-
-{% assign artist_of_prev_tab = '' %} 
-
-{% for tab in tabs_ordered_by_artist %}
-	
-	{% if tab.artist != artist_of_prev_tab %}
-		<h2>{{ tab.artist }}</h2>
-	{% endif %}
-
-	<br>
-	<a href="tabs/{{ tab.path | split: "/" | slice: 1, 100 }}">{{ tab.title }} - {{ tab.chords }}</a>
-	
-	{% assign artist_of_prev_tab = tab.artist %} 
 {% endfor %}
