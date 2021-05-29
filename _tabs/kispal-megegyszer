@@ -1,13 +1,9 @@
 ---
 layout: post
-title: Mégegyszer
+title: megegyszer
+chords: sample chords
+render_with_liquid: false
 artist: kispal
-source: [https://tabs.ultimate-guitar.com/tab/1902131, https://gitartab.hu/hu/tab/kispal-es-a-borz/szivrablas/54686]
-# youtube: https://youtu.be/k3QUykHwibA
-chords: Dm Fm ; Dm A# ; Am Gm A Dm Fm
-# capo
-# genre
-todo: hát még elég sok minden...
 ---
 
           Kispál és a Borz - Még egyszer
