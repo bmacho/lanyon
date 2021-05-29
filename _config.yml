@@ -13,4 +13,5 @@ exclude: [Gemfile, Gemfile.lock, gems, node_modules, vendor, LICENSE.md, README.
 collections:
   tabs: 
     output: true
-    permalink: /tabs/:name
+    permalink: :name
+    render_with_liquid: true
