@@ -6,14 +6,14 @@ title: Home
 {{ site.time | date_to_rfc822 }} <br> <br>
 
 <ul>
-{% for tab in site.tabs %}
+{% for tab in site.pages %}
 
 	<li>{{ tab.title }} - {{ tab.chords }}</li>
 
 {% endfor %}
 </ul> 
 
-{% assign tabs_ordered_by_artist = site.tabs | sort: "aritst" %}
+{% assign tabs_ordered_by_artist = site.pages | sort: "aritst" %}
 
 <h2>Artists:</h2>
 
