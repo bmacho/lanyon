@@ -14,5 +14,5 @@ collections:
   pages: 
     output: true
     permalink: :name
-    render_with_liquid: true
-    layout: page
+    render_with_liquid: false
+    layout: post
