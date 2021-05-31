@@ -5,9 +5,9 @@ title: Home
 
 {{ site.time | date_to_rfc822 }} <br> <br>
 
-{% for tab in site.tabs | sort: "artist" %}
+{% for tab in site.tabs %}
 
-	<a href="tabs/{{ tab.path | remove: ".html" | remove: "_tabs/" }}"><h2>{{ tab.artist }}: {{ tab.title }}</h2></a>
+	<a href="{{ tab.url }}"><h2> {{ tab.artist }}: {{ tab.title }}</h2></a>
 	
 	<br> <pre>{{ tab.content }}</pre>
 
