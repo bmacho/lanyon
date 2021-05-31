@@ -11,3 +11,5 @@ exclude: [_tabs/sample.html, Gemfile, Gemfile.lock, gems, node_modules, vendor, 
 collections:
   tabs:
     output: true
+
+emptyArray: []

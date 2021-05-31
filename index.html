@@ -3,9 +3,35 @@ layout: default
 title: Home
 ---
 
-{{ site.time | date_to_rfc822 }} <br> <br>
+utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
+
+<h2>Todo (3 random): </h2>
+
+{% assign tabs_has_todo = site.emptyArray %}
 
 {% for tab in site.tabs %}
+
+	{% if tab.todo %}
+
+		{% assign tabs_has_todo = tabs_has_todo | push: tab %}
+
+	{% endif %}
+
+{% endfor %}	
+
+{% assign sample_todo = tabs_has_todo | sample: 3 %}
+
+{% for tab in sample_todo %}
+
+	<a href="{{ tab.url }}">{{ tab.artist }}: {{ tab.title }}</a>: {{ tab.todo }}<br>
+
+{% endfor %}	
+
+<h2>Tabok (5 random):</h2>
+
+{% assign sample_tabs = site.tabs | sample: 5 %}
+
+{% for tab in sample_tabs %}
 
 	<a href="{{ tab.url }}"><h2> {{ tab.artist }}: {{ tab.title }}</h2></a>
 	
