@@ -1,0 +1,21 @@
+---
+layout: page
+title: Összes tab
+---
+
+{% assign tabs_grouped_by = site.tabs | group_by:"artist" | sort:"name" %}
+
+{% for artist in tabs_grouped_by %}
+
+	<h3> {{ artist.name }} </h3>
+
+	{% assign tabs_by_title = artist.items | sort:"title" %}
+
+	{% for tab in tabs_by_title %}
+
+		<a href="/lanyon/{{ tab.url }}">{{ tab.title }}</a> <br>
+		
+	{% endfor %}	
+
+{% endfor %}	
+

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: index.html
 ---
 
 utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
@@ -23,7 +24,7 @@ utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
 
 {% for tab in sample_todo %}
 
-	<a href="{{ tab.url }}">{{ tab.artist }}: {{ tab.title }}</a>: {{ tab.todo }}<br>
+	<a href=".{{ tab.url }}">{{ tab.artist }}: {{ tab.title }}</a>: {{ tab.todo }}<br>
 
 {% endfor %}	
 
@@ -33,7 +34,7 @@ utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
 
 {% for tab in sample_tabs %}
 
-	<a href="{{ tab.url }}"><h2> {{ tab.artist }}: {{ tab.title }}</h2></a>
+	<a href=".{{ tab.url }}"><h2> {{ tab.artist }}: {{ tab.title }}</h2></a>
 	
 	<br> <pre>{{ tab.content }}</pre>
 

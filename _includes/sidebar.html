@@ -4,9 +4,6 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p>{{ site.description }}</p>
-  </div>
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
@@ -18,7 +15,6 @@
 
     {% assign pages_list = site.pages | sort:"url" %}
     {% for node in pages_list %}
-	  YAAAAAY
       {% if node.title != null %}
         {% if node.layout == "page" %}
           <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
@@ -31,9 +27,9 @@
     <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
   </nav>
 
-  <div class="sidebar-item">
+  <div class="sidebar-item" style="position:absolute; bottom:0;">
     <p>
-      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+      © {{ site.time | date: '%Y' }} All rights reserved for their original author
     </p>
   </div>
 </div>
