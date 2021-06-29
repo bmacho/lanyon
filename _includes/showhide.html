@@ -1,0 +1,13 @@
+<style>
+	#cb-{{ include.id }}:not(:checked) ~ #box-{{ include.id }} {
+	  display: none;
+	}
+</style>
+
+
+<label for="cb-{{ include.id }}" style="cursor: pointer; color: #268bd2;"> {{ include.label }} </label>
+<input id="cb-{{ include.id }}" style="display: none;" type="checkbox" />
+
+<div id="box-{{ include.id }}">
+{{ include.content }} 
+</div>
