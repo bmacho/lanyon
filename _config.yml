@@ -6,11 +6,12 @@ github.repo:		 https://github.com/bmacho/lanyon/
 
 permalink: /:path
 
-include: [_pages/, _pages, _tabs, _tabs/]
-exclude: [_tabs/sample.html, _tabs/work_in_progress/sample.html, Gemfile, Gemfile.lock, gems, node_modules, vendor, LICENSE.md, README.md, _posts/]
+include: [ _pages, _tabs ]
+exclude: [ _posts, _tabs/sample.html, drafts, _tabs/drafts/, Gemfile, Gemfile.lock, gems, node_modules, vendor, LICENSE.md, README.md ]
 
 collections:
   tabs:
     output: true
+    permalink: /:collection/:name
 
 emptyArray: []
