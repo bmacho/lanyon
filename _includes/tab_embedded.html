@@ -1,0 +1,27 @@
+{% for data in include.tab.youtube %}
+  <br> videos: <a href="{{ data }}">{{ data }}</a>
+{% endfor %}
+
+{% for data in include.tab.todo %}
+  <br> todo: {{ data }}
+{% endfor %}
+
+<!--
+{% for data in include.tab.language %}
+  <br> nyelv: {{ data }}
+{% endfor %}
+-->
+
+{% for data in include.tab.head_text %}
+  <br> {{ data }}
+{% endfor %}
+
+<pre>{{ include.tab.content }}</pre>
+
+{% for data in include.tab.foot_text %}
+  <br> {{ data }}
+{% endfor %}
+
+{% for data in include.tab.source %}
+  <br> forrás: {{ data }}
+{% endfor %}

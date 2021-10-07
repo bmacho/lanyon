@@ -13,8 +13,10 @@ title: Összes tab
 
 	{% for tab in tabs_by_title %}
 
-		<a href="..{{ tab.url }}">{{ tab.title }}</a> <br>
-		
+		{% assign tab_id = tab.url | slugify: "latin" %}
+
+		{% include showhide.html id=tab_id label=tab.title content=tab.content tab=tab %}
+
 	{% endfor %}	
 
 {% endfor %}	

@@ -4,6 +4,8 @@ title: Home
 permalink: index.html
 ---
 
+<a href="#all-tabs"> <h2 align="center"> --> Összes tab <-- <br> </h2> </a>
+
 utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
 
 <h2>Todo (3 random): </h2>
@@ -39,3 +41,27 @@ utolsó frissítés: {{ site.time | date_to_rfc822 }} <br> <br>
 	<br> <pre>{{ tab.content }}</pre>
 
 {% endfor %}
+
+
+<h2 id="all-tabs">Összes tab</h2>
+
+
+{% assign tabs_grouped_by = site.tabs | group_by:"artist" | sort:"name" %}
+
+{% for artist in tabs_grouped_by %}
+
+	<h3> {{ artist.name }} </h3>
+
+	{% assign tabs_by_title = artist.items | sort:"title" %}
+
+	{% for tab in tabs_by_title %}
+
+		{% assign tab_id = tab.url | slugify: "latin" %}
+
+		{% include showhide.html id=tab_id label=tab.title content=tab.content tab=tab %}
+
+	{% endfor %}	
+
+{% endfor %}	
+
+

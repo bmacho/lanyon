@@ -5,30 +5,6 @@ layout: default
 <div class="page">
   <h1 class="page-title">{{ page.artist }}: {{ page.title }}</h1>
 
-{% for data in page.youtube %}
-  <br> videos: <a href="{{ data }}">{{ data }}</a>
-{% endfor %}
-
-{% for data in page.todo %}
-  <br> todo: {{ data }}
-{% endfor %}
-
-{% for data in page.language %}
-  <br> nyelv: {{ data }}
-{% endfor %}
-
-{% for data in page.head_text %}
-  <br> nyelv: {{ data }}
-{% endfor %}
-
-<pre>{{ content }}</pre>
-
-{% for data in page.source %}
-  <br> forrás: {{ data }}
-{% endfor %}
-
-{% for data in page.foot_text %}
-  <br> {{ data }}
-{% endfor %}
+{% include tab_embedded.html tab=page %}
 
 </div>

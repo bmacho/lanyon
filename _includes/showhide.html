@@ -9,5 +9,8 @@
 <input id="cb-{{ include.id }}" style="display: none;" type="checkbox" />
 
 <div id="box-{{ include.id }}">
-{{ include.content }} 
-</div>
+
+{% include tab_embedded.html tab=include.tab %}
+
+</div> 
+<br>
